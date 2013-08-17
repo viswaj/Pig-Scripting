@@ -26,4 +26,3 @@ loadLog = LOAD '$inputDir' AS (logFormat) USING someStorage();
 
    -param outputfile=/home/data/`date .+%Y-%m-%d.`/out to generate the parameter
 
-4. Use the pig- dryrun option to test the parameter substitution before running the actual script.
