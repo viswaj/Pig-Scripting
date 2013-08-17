@@ -1,0 +1,29 @@
+Pig Parameter Substitution
+
+1. Using a file to pass Pig Parameters
+
+pig -param_file paramFile script.pig
+
+If data is on HDFS, the paramFile point to the directory. For example,
+
+if the data is in the folder /user/hadoop/data/input.log, then the param file must contain
+
+#inputDir
+
+inputDir = /user/hadoop/data
+
+In the script file, access the inputDir as :
+
+loadLog = LOAD '$inputDir' AS (logFormat) USING someStorage();
+
+2. For command line parameters, use the following syntax:
+
+   pig -param input=input.log -param out=outputDir script.pig
+
+3. Dynamic Parameters
+
+   When using the -param option for passing arguments on the command line, the values of parameters can be generated dynamically using a command/script.  For example, to generate a parameter based on time, one can use the unix command
+
+   -param outputfile=/home/data/`date .+%Y-%m-%d.`/out to generate the parameter
+
+4. Use the pig- dryrun option to test the parameter substitution before running the actual script.
