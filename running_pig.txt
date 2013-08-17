@@ -1,0 +1,18 @@
+Running Pig:
+
+You can run Pig (execute Pig Latin statements and Pig commands) using various modes.
+
+Interactive Mode - Local & MR modes	
+Batch Mode - Local & MR modes
+
+Execution Modes
+Pig has two execution modes or exectypes:
+
+Local Mode - To run Pig in local mode, you need access to a single machine; all files are installed and run using your local host and file system. Specify local mode using the -x flag (pig -x local).
+Mapreduce Mode - To run Pig in mapreduce mode, you need access to a Hadoop cluster and HDFS installation. Mapreduce mode is the default mode; you can, but don't need to, specify it using the -x flag (pig OR pig -x mapreduce).
+
+Also we can get the arguments to the pig script through an option -params_file <filename> while submitting the pig query.
+
+eg.,
+
+pig -x local -params_file top_queries_params.txt top_queries_fetch.pig
