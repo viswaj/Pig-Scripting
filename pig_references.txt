@@ -1,0 +1,2 @@
+http://pig.apache.org/
+http://wiki.apache.org/pig/ParameterSubstitution
